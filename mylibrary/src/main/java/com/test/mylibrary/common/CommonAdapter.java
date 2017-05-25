@@ -15,30 +15,30 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
 
     private Context context;
 
-    private List<T> mDatas;
+    private List<T> mDataLists;
 
     private int layoutId;
 
     /**
      * 构造函数
      * @param context  上下文
-     * @param mDatas    显示数据
+     * @param mDataLists    显示数据
      * @param layoutId  布局ID
      */
-    public CommonAdapter(Context context, List<T> mDatas, int layoutId) {
+    public CommonAdapter(Context context, List<T> mDataLists, int layoutId) {
         this.context = context;
-        this.mDatas = mDatas;
+        this.mDataLists = mDataLists;
         this.layoutId = layoutId;
     }
 
     @Override
     public int getCount() {
-        return mDatas.size();
+        return mDataLists.size();
     }
 
     @Override
     public T getItem(int position) {
-        return mDatas.get(position);
+        return mDataLists.get(position);
     }
 
     @Override

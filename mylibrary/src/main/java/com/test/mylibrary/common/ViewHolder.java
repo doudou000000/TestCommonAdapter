@@ -133,7 +133,7 @@ public class ViewHolder {
      */
     public ViewHolder setImageView(int viewId, String url){
         ImageView imageView = getView(viewId);
-        //自己实现图片下载
+        //自己去实现图片下载
         return this;
     }
 }
