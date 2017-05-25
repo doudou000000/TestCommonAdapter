@@ -19,6 +19,12 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
 
     private int layoutId;
 
+    /**
+     * 构造函数
+     * @param context  上下文
+     * @param mDatas    显示数据
+     * @param layoutId  布局ID
+     */
     public CommonAdapter(Context context, List<T> mDatas, int layoutId) {
         this.context = context;
         this.mDatas = mDatas;
@@ -42,14 +48,18 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
+        //获取viewholder对象
         ViewHolder holder = ViewHolder.getViewHolder(context,position,convertView,parent, layoutId);
+        //通过holder和实体类获取控件对象并赋值
         setText(getItem(position),holder);
+        //返回convertView
         return holder.getmConvertView();
     }
+
+    /**
+     * 通过holder和实体类获取控件对象并赋值
+     * @param t        实体类
+     * @param holder  viewholder对象
+     */
     public abstract void setText(T t,ViewHolder holder);
-
-    public void setTextView(T t,int viewId){
-
-    }
-
 }
